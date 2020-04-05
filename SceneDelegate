@@ -1,0 +1,15 @@
+
+//  SceneDelegate.m
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)URLContexts {
+  UIOpenURLContext *openURLContext = URLContexts.allObjects.firstObject;
+  if (openURLContext) {
+    [[ApplicationDelegate sharedInstance] application:UIApplication.sharedApplication
+    openURL:openURLContext.URL   
+    sourceApplication:openURLContext.options.sourceApplication
+    annotation:openURLContext.options.annotation];
+  }
+  // Add any custom logic here.
+}
+    
